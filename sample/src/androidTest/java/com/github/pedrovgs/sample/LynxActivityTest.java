@@ -80,7 +80,6 @@ public class LynxActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     assertShowsTraceMatchingTraceLevel(TraceLevel.INFO);
     assertShowsTraceMatchingTraceLevel(TraceLevel.WARNING);
     assertShowsTraceMatchingTraceLevel(TraceLevel.ERROR);
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
   }
 
   public void testShowsTracesEqualsOrGreaterThanDebugTraceLevelOnTraceLevelSelected() {
@@ -92,7 +91,6 @@ public class LynxActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     assertShowsTraceMatchingTraceLevel(TraceLevel.INFO);
     assertShowsTraceMatchingTraceLevel(TraceLevel.WARNING);
     assertShowsTraceMatchingTraceLevel(TraceLevel.ERROR);
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
     assertTracesListDoesNotShowTracesLowerThan(TraceLevel.DEBUG);
   }
 
@@ -104,7 +102,6 @@ public class LynxActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     assertShowsTraceMatchingTraceLevel(TraceLevel.INFO);
     assertShowsTraceMatchingTraceLevel(TraceLevel.WARNING);
     assertShowsTraceMatchingTraceLevel(TraceLevel.ERROR);
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
     assertTracesListDoesNotShowTracesLowerThan(TraceLevel.INFO);
   }
 
@@ -115,7 +112,6 @@ public class LynxActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     assertShowsTraceMatchingTraceLevel(TraceLevel.WARNING);
     assertShowsTraceMatchingTraceLevel(TraceLevel.ERROR);
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
     assertTracesListDoesNotShowTracesLowerThan(TraceLevel.WARNING);
   }
 
@@ -125,17 +121,7 @@ public class LynxActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     waitForSomeTraces();
 
     assertShowsTraceMatchingTraceLevel(TraceLevel.ERROR);
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
     assertTracesListDoesNotShowTracesLowerThan(TraceLevel.ERROR);
-  }
-
-  public void testShowsTracesEqualsOrGreaterThanWtfRTraceLevelOnTraceLevelSelected() {
-    selectFilterByTraceLevel(TraceLevel.WTF);
-
-    waitForSomeTraces();
-
-    assertShowsTraceMatchingTraceLevel(TraceLevel.WTF);
-    assertTracesListDoesNotShowTracesLowerThan(TraceLevel.WTF);
   }
 
   private void selectFilterByTraceLevel(TraceLevel traceLevel) {
